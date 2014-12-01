@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+{% load staticfiles %}
+<html>
+
+    <head>
+        <title>Main</title>
+    </head>
+
+    <body>
+		{% if message2 %}
+			{{ message2 }}
+		{% else %}
+			{{ message }} <br \>
+			<embed src="/static/server/{{ user.username }}_testowy.pdf" width=800px height=500px /><br>
+			 <a href="/media/server/{{ user.username }}/{{ study }}/{{ user.username }}_out.txt" download>download txt</a> <br>
+		{% endif %}
+		<button type="button" onclick="location.href='/server/'">Home</button>
+    </body>
+
+</html>

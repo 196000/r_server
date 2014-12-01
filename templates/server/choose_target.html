@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+
+    <head>
+        <title>Add</title>
+    </head>
+
+    <body>
+		 Current target: {{ target }}<br />
+		 {% if targets %}
+            <ul>
+                {% for target in targets %}
+                <li><a href="/server/choose_target/{{ target }}/">{{ target }}</a></li>
+                {% endfor %}
+            </ul>
+        {% else %}
+            <strong>There is no targets file present.</strong>
+        {% endif %}
+		<br><button type="button" onclick="location.href='/server/'">Home</button>
+    </body>
+
+</html>

@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+
+    <head>
+        <title>Add</title>
+    </head>
+
+    <body>
+		 {% if studies %}
+            <ul>
+                {% for study in studies %}
+                <li><a href="/server/choose_study/{{ study }}/">{{ study }}</a><span class="tab"></span>&nbsp;&nbsp;&nbsp;<button type="button" onclick="location.href='/server/remove_study/{{ study }}/'">Remove</button></li>
+                {% endfor %}
+            </ul>
+        {% else %}
+            <strong>There are no existing studies.</strong>
+        {% endif %}
+		<form action="/server/create_study/" method="post">
+		{% csrf_token %}
+		{{ form }}
+		<input type="submit" value="Submit" />
+</form>
+		<br><button type="button" onclick="location.href='/server/'">Home</button>
+    </body>
+
+</html>

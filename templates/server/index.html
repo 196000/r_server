@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+
+    <head>
+        <title>Main</title>
+    </head>
+
+    <body>
+		{% if user.is_authenticated %}
+		hello {{ user.username }}!<br />
+		<a href="/server/manage_studies/">Manage Studies</a><br />
+		<a href="/server/add_data/">Upload Data</a><br />
+		<a href="/server/add_targets/">Upload Targets</a><br />
+		<a href="/server/choose_target/">Chose Target</a><br />
+		<a href="/server/results/">Latest results</a><br />
+		<button type="button" onclick="location.href='/server/run/'">Run</button>
+		<br /><br /><a href="/accounts/logout/">Logout</a><br />
+		{% else %}
+		hello world!<br />
+		<a href="/accounts/login/">Login</a><br /><br />
+		<a href="/accounts/register/">Register Here</a><br />
+		{% endif %}
+    </body>
+
+</html>
